@@ -24,6 +24,7 @@ const App = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   window.addEventListener("message", (event) => {
+    console.log("Event Origin:", event.origin);
     if (event.origin !== "https://app.dev.meenaai.com/") return; // Ensure security
 
     const receivedCart = event.data; // Array of transformed cart items
