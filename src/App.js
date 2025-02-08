@@ -24,7 +24,7 @@ const App = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   window.addEventListener("message", (event) => {
-    if (event.origin !== "http://localhost:3000") return; // Ensure security
+    if (event.origin !== "https://app.dev.meenaai.com") return; // Ensure security
 
     const receivedCart = event.data; // Array of transformed cart items
     console.log("Received cart from iframe:", receivedCart);
