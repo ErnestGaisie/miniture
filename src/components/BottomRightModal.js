@@ -42,7 +42,7 @@ export const BottomRightModal = ({ isOpen, onClose, onClick }) => {
         <div className="absolute top-0 right-0 mt-2 mr-2">
           <BrainCircuit size={24} className="text-indigo-200 animate-pulse" />
         </div>
-        <h3 className="text-xl font-bold mb-2">MeenaAI Furniture Finder</h3>
+        <h3 className="text-xl font-bold mb-2">MeenaAI</h3>
         <p className="text-indigo-100 mb-4">
           Discover your perfect furniture match with our AI assistant!
         </p>

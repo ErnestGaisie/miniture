@@ -47,7 +47,7 @@ export const category = [
   {
     id: 2,
     img: "../images/miniture/bed_room.jpg",
-    name: "Bed Room",
+    name: "Bedroom",
   },
   {
     id: 3,

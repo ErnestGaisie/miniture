@@ -22,6 +22,13 @@ const Header = () => {
     };
   }, []);
 
+  window.addEventListener("message", (event) => {
+    console.log("Event Origin:", event.origin);
+    if (event.origin !== "https://app.dev.meenaai.com") return; // Ensure security
+
+    setIsSidebarOpen(true)
+  });
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
