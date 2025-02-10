@@ -21,7 +21,7 @@ const cartSlice = createSlice({
       if (existingProduct) {
         const tempCart = state.data.map((product) => {
           if (product.id === action.payload.id) {
-            let newQty = product.quantity + action.payload.quantity;
+            let newQty = 1;
             let newTotalPrice = newQty * product.price;
 
             return {
