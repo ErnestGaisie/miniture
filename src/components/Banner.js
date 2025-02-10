@@ -48,18 +48,18 @@ const Banner = () => {
           </div>
         </div>
         <div className="w-full">
-          <Slider {...settings}>
-            {banners.map((data, key) => (
-              <div className="banner-slider rounded-3xl" key={key}>
+          {/* <Slider {...settings}>
+            {banners.map((data, key) => ( */}
+              <div className="banner-slider rounded-3xl" >
                 <img
-                  src={data.banner}
+                  src={banners[0].banner}
                   alt="databannerinmg"
                   className="rounded-3xl"
                   width={"100%"}
                 />
               </div>
-            ))}
-          </Slider>
+          {/* //   ))} */}
+          {/* // </Slider> */}
         </div>
       </div>
     </div>

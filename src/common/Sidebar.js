@@ -3,6 +3,7 @@ import { FaTimes } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartTotal, removeItem } from "../redux/cartSlice";
 import { Link } from "react-router-dom";
+import Close from "../svgs/right.svg"
 
 const Sidebar = ({ isSidebarOpen, closeSidebar }) => {
   const dispatch = useDispatch();
@@ -49,8 +50,11 @@ const Sidebar = ({ isSidebarOpen, closeSidebar }) => {
                     <div className="relative">
                       <img src={item.img} alt="img" height={84} width={84} />
                       <span
-                        className="absolute top-0 -mt-2 -ml-2 bg-red-600 text-white"
+                        className="absolute top-0 -mt-2 -ml-2 text-white"
                         onClick={() => removeFromCart(item.id)}
+                        style= {{
+                          backgroundColor: "#141E4D"
+                        }}
                       >
                         <FaTimes />
                       </span>
@@ -73,7 +77,7 @@ const Sidebar = ({ isSidebarOpen, closeSidebar }) => {
                   Sub Total : <span>${totalAmount}</span>
                 </h2>
                 <div className="ml-4 bg-rose-100 rounded-sm py-3 px-6 text-black">
-                  <Link to="/cart">View Cart</Link>
+                  <Link to="/cart" onClick={() => closeSidebar()}>View Cart</Link>
                 </div>
               </div>
             </div>

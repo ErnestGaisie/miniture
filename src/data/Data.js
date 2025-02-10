@@ -9,32 +9,26 @@ export const navbar = [
     path: "/shop",
     nav: "Shop",
   },
-  {
-    id: 3,
-    path: "/blog",
-    nav: "Blog",
-  },
-  {
-    id: 4,
-    path: "/about",
-    nav: "About Us",
-  },
-  {
-    id: 5,
-    path: "/contact",
-    nav: "Contact Us",
-  },
+  // {
+  //   id: 3,
+  //   path: "/blog",
+  //   nav: "Blog",
+  // },
+  // {
+  //   id: 4,
+  //   path: "/about",
+  //   nav: "About Us",
+  // },
+  // {
+  //   id: 5,
+  //   path: "/contact",
+  //   nav: "Contact Us",
+  // },
 ];
 
 export const banners = [
   {
-    banner: "../images/miniture/slider-1.jpeg",
-  },
-  {
-    banner: "../images/miniture/slider-2.jpeg",
-  },
-  {
-    banner: "../images/miniture/slider-3.jpeg",
+    banner: "../images/miniture/creation.jpg",
   },
 ];
 
