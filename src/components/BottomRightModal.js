@@ -26,9 +26,10 @@ export const BottomRightModal = ({ isOpen, onClose, onClick }) => {
         isOpen ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
       }`}
       style={{
-        backgroundColor: "#ffa832",
+        backgroundColor: "#574FE5",
         bottom: "10px",
         right: "10px",
+        borderRadius: "10px",
         transition:
           "transform 0.2s ease-in-out, background-color 0.2s ease-in-out",
       }}
@@ -38,12 +39,12 @@ export const BottomRightModal = ({ isOpen, onClose, onClick }) => {
       tabIndex={0}
       aria-label="Shop furniture with AI"
     >
-      <div className="relative p-6">
+      <div className="relative p-3">
         <div className="absolute top-0 right-0 mt-2 mr-2">
           <BrainCircuit size={24} className="text-indigo-200 animate-pulse" />
         </div>
-        <h3 className="text-xl font-bold mb-2">MeenaAI</h3>
-        <p className="text-indigo-100 mb-4">
+        <h3 className="text-xl font-bold mb-1">MeenaAI</h3>
+        <p className="text-indigo-100 text-sm mb-2">
           Discover your perfect furniture match with our AI assistant!
         </p>
         <div className="flex items-center space-x-2">
@@ -52,7 +53,7 @@ export const BottomRightModal = ({ isOpen, onClose, onClick }) => {
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4"
             style={{
-              height: "40px",
+              height: "20px",
               width: "40px",
             }}
             fill="none"
@@ -68,7 +69,6 @@ export const BottomRightModal = ({ isOpen, onClose, onClick }) => {
           </svg>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 animate-gradient-x"></div>
     </motion.div>
   );
 };
