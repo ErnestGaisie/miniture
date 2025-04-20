@@ -1,12 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartTotal, removeItem } from "../redux/cartSlice";
 import { Link } from "react-router-dom";
-import Close from "../svgs/right.svg"
+import Close from "../svgs/right.svg";
+import { Resend } from "resend";
+import Email from "../components/Email";
+import PersonaModal from "./PersonaModal";
 
 const Sidebar = ({ isSidebarOpen, closeSidebar }) => {
   const dispatch = useDispatch();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const { data: cartProducts, totalAmount } = useSelector(
     (state) => state.cart
   );
@@ -20,6 +25,35 @@ const Sidebar = ({ isSidebarOpen, closeSidebar }) => {
     dispatch(removeItem({ id: itemId }));
     dispatch(getCartTotal());
   };
+
+  const sendEmail = async () => {
+    await fetch("http://localhost:8000/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        to: "ernestyawgaisie@gmail.com",
+        subject: "Hello from Meena!",
+        body: "This is a test email sent via FastAPI + Resend.",
+        image:
+          cartProducts[0].demo_output[
+            Math.floor(Math.random() * cartProducts[0].demo_output.length)
+          ],
+        name: cartProducts[0].title,
+      }),
+    });
+    closeSidebar();
+  };
+
+  const handleOpen = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsModalOpen(null);
+  };
+
   return (
     <div>
       <div
@@ -52,8 +86,8 @@ const Sidebar = ({ isSidebarOpen, closeSidebar }) => {
                       <span
                         className="absolute top-0 -mt-2 -ml-2 text-white"
                         onClick={() => removeFromCart(item.id)}
-                        style= {{
-                          backgroundColor: "#141E4D"
+                        style={{
+                          backgroundColor: "#141E4D",
                         }}
                       >
                         <FaTimes />
@@ -77,13 +111,14 @@ const Sidebar = ({ isSidebarOpen, closeSidebar }) => {
                   Sub Total : <span>${totalAmount}</span>
                 </h2>
                 <div className="ml-4 bg-rose-100 rounded-sm py-3 px-6 text-black">
-                  <Link to="/cart" onClick={() => closeSidebar()}>View Cart</Link>
+                  <button onClick={() => handleOpen()}>Trigger Ads</button>
                 </div>
               </div>
             </div>
           )}
         </div>
       </div>
+      <PersonaModal isModalOpen={isModalOpen} handleClose={handleClose} />
     </div>
   );
 };

@@ -9,7 +9,7 @@ import Shop from "./pages/Shop";
 import ContactUs from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
 import Blog from "./pages/Blog";
-import { BottomRightModal } from "./components/BottomRightModal";
+// import { BottomRightModal } from "./components/BottomRightModal";
 import Dialog from "@mui/material/Dialog";
 import Slide from "@mui/material/Slide";
 import { addToCart } from "./redux/cartSlice";
@@ -67,11 +67,11 @@ const App = () => {
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
-        <BottomRightModal
+        {/* <BottomRightModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           onClick={handleModalClick}
-        />
+        /> */}
         <Dialog
           fullScreen
           open={isDialogOpen}

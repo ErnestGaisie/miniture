@@ -7,7 +7,6 @@ import BestSeller from "../components/products";
 import Arrived from "../components/Arrived";
 import store from "../redux/store";
 import { addToCart } from "../redux/cartSlice";
-import { BottomRightModal } from "../components/BottomRightModal.js";
 import { AIShoppingDialog } from "../components/AISjoppingDIalog.js";
 
 
