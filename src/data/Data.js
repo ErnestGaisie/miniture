@@ -63,7 +63,7 @@ export const category = [
 export const products = [
   {
     id: 1,
-    img: "../images/miniture/demo/Bondi Latte Armchair + Ottoman.jpg",
+    img: "../images/miniture/demo/Bondi Latte ArmchairOttoman.jpg",
     category: "bestsell",
     brand: "Inside Weather",
     title: "Modular Bondi Latte Armchair + Ottoman in Rose Quartz",
