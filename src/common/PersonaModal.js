@@ -134,9 +134,6 @@ const PersonaModal = ({ isModalOpen, handleClose }) => {
                         <h3 className="font-semibold text-lg">
                           {persona.name}
                         </h3>
-                        <p className="text-gray-600 text-sm">
-                          {persona.description}
-                        </p>
                       </div>
                     </div>
                   </div>
