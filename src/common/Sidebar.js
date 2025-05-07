@@ -94,8 +94,13 @@ const Sidebar = ({ isSidebarOpen, closeSidebar }) => {
                       </span>
                     </div>
 
-                    <div>
-                      <p>{item.title}</p>
+                    <div
+                      className=""
+                      style={{
+                        width: "350px",
+                      }}
+                    >
+                      <p style={{ maxWidth: "250px" }}>{item.title}</p>
                     </div>
                   </div>
 
@@ -108,7 +113,7 @@ const Sidebar = ({ isSidebarOpen, closeSidebar }) => {
 
               <div className="flex p-6 items-center bg-black w-full text-white font-bold">
                 <h2>
-                  Sub Total : <span>${totalAmount}</span>
+                  Sub Total : <span>$1,273.50</span>
                 </h2>
                 <div className="ml-4 bg-rose-100 rounded-sm py-3 px-6 text-black">
                   <button onClick={() => handleOpen()}>Trigger Ads</button>
