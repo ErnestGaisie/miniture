@@ -74,7 +74,7 @@ export const products = [
   },
   {
     id: 2,
-    img: "../images/miniture/demo/Modular Bondi.jpg",
+    img: "../images/miniture/demo/Modular Bondi Latte front.png",
     category: "New Category",
     brand: "Inside Weather",
     title: "Modular Bondi Latte 2-Seater Sofa in Rose Quartz",

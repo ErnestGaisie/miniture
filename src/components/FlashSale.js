@@ -18,13 +18,13 @@ const FlashSale = () => {
   //       const res = await fetch(API_URL);
   //       const json = await res.json();
   //       console.log("RAW API RESPONSE:", json);
-  //       setProducts(json.results || []); 
+  //       setProducts(json.results || []);
   //       setLoading(false);
   //     } catch (error) {
   //       console.error("Failed to fetch products:", error);
   //       setLoading(false);
   //     }
-  //   };    
+  //   };
 
   //   fetchProducts();
   // }, []);
@@ -43,48 +43,53 @@ const FlashSale = () => {
         <Heading heading={"You are in Miniture"} />
 
         {/* {loading ? ( */}
-          {/* <p>Loading...</p> */}
+        {/* <p>Loading...</p> */}
         {/* ) : (  */}
-          <div className="grid grid-cols-4 gap-3">
-            {products.map((item, index) => (
-              <div key={index} className="mt-8">
-                <div className="overflow-hidden relative">
-                  <div className="image-container relative">
-                    <div className="rounded-3xl">
-                    <img src={item.img} alt="img" className="rounded-3xl" />
-                    </div>
+        <div className="grid grid-cols-4 gap-3">
+          {products.map((item, index) => (
+            <div key={index} className="mt-8">
+              <div className="overflow-hidden relative">
+                <div className="image-container relative">
+                  <div className="rounded-3xl" style={{ height: "200px" }}>
+                    <img
+                      src={item.img}
+                      alt="img"
+                      className="rounded-3xl"
+                      style={{ height: "200px" }}
+                    />
+                  </div>
 
-                    <div className="opacity-0 absolute top-0 right-0 m-4">
-                      <div>
-                        <div className="bg-white p-4 rounded-full mb-2">
-                          <IoMdHeartEmpty />
-                        </div>
-                        <div className="bg-white p-4 rounded-full">
-                          <IoMdSearch />
-                        </div>
+                  <div className="opacity-0 absolute top-0 right-0 m-4">
+                    <div>
+                      <div className="bg-white p-4 rounded-full mb-2">
+                        <IoMdHeartEmpty />
                       </div>
-                    </div>
-                    <div className="opacity-0 absolute -bottom-3 right-0 bg-white p-4 rounded-s-2xl">
-                      <div className="bg-black text-white h-10 w-10 grid place-items-center rounded-3xl">
-                        <button
-                          className="text-2xl"
-                        onClick={() => handleOpen(item.id)}
-                        >
-                          <BiCart />
-                        </button>
+                      <div className="bg-white p-4 rounded-full">
+                        <IoMdSearch />
                       </div>
                     </div>
                   </div>
-
-                  <div className="product-details mt-2">
-                  <p className="mb-2">{item.title}</p>
-                    <p>${item.price}</p>
+                  <div className="opacity-0 absolute -bottom-3 right-0 bg-white p-4 rounded-s-2xl">
+                    <div className="bg-black text-white h-10 w-10 grid place-items-center rounded-3xl">
+                      <button
+                        className="text-2xl"
+                        onClick={() => handleOpen(item.id)}
+                      >
+                        <BiCart />
+                      </button>
+                    </div>
                   </div>
                 </div>
+
+                <div className="product-details mt-2">
+                  <p className="mb-2">{item.title}</p>
+                  <p>${item.price}</p>
+                </div>
               </div>
-            ))}
-          </div>
-         {/* )} */}
+            </div>
+          ))}
+        </div>
+        {/* )} */}
       </div>
 
       <Modal

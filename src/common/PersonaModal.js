@@ -12,7 +12,8 @@ const personas = [
     name: "Minimalist Jetsetter",
     description: "Creative thinker who embraces new ideas and technologies",
     image:
-      "https://meena-storage.s3.us-east-1.amazonaws.com/temp-output/persona1.png",
+      "https://meena-storage.s3.us-east-1.amazonaws.com/temp-output/prompt1.png",
+    outName: "Modular Bondi Latte Sofa",
   },
   {
     id: 2,
@@ -20,14 +21,16 @@ const personas = [
     description:
       "Detail-oriented problem solver who makes data-driven decisions",
     image:
-      "https://meena-storage.s3.us-east-1.amazonaws.com/temp-output/persona2.png",
+      "https://meena-storage.s3.us-east-1.amazonaws.com/temp-output/prompt2.png",
+    outName: "Modular Bondi Latte Sofa",
   },
   {
     id: 3,
     name: "Sustainable & Sophisticated",
     description: "Confident decision-maker who inspires and motivates teams",
     image:
-      "https://meena-storage.s3.us-east-1.amazonaws.com/temp-output/persona3.png",
+      "https://meena-storage.s3.us-east-1.amazonaws.com/temp-output/prompt3.png",
+    outName: "Arcane Storage Coffee Table in Walnut",
   },
   {
     id: 4,
@@ -35,14 +38,16 @@ const personas = [
     description:
       "Team player who excels at building relationships and consensus",
     image:
-      "https://meena-storage.s3.us-east-1.amazonaws.com/temp-output/persona4.png",
+      "https://meena-storage.s3.us-east-1.amazonaws.com/temp-output/prompt4.png",
+    outName: "Modular Bondi Latte Sofa",
   },
   {
     id: 5,
     name: "Soft Urban Luxe",
     description: "Forward-thinking strategist who sees the big picture",
     image:
-      "https://meena-storage.s3.us-east-1.amazonaws.com/temp-output/persona5.png",
+      "https://meena-storage.s3.us-east-1.amazonaws.com/temp-output/prompt5.png",
+    outName: "Arcane Storage Coffee Table in Walnut",
   },
 ];
 
@@ -97,7 +102,7 @@ const PersonaModal = ({ isModalOpen, handleClose }) => {
         subject: "Hello from Meena!",
         body: "This is a test email sent via FastAPI + Resend.",
         image: selectedPersona["image"],
-        name: "",
+        name: selectedPersona["outName"],
       }),
     });
   };
